@@ -13,15 +13,15 @@ export interface StyleguideConfigObject {
 
 export const esmStyleGuideSchema = {
   'Brand color #1': {
-    _default: '#005d5d',
+    _default: '#950606',
     _type: Type.String,
   },
   'Brand color #2': {
-    _default: '#004144',
+    _default: '#950606',
     _type: Type.String,
   },
   'Brand color #3': {
-    _default: '#007d79',
+    _default: '#950606',
     _type: Type.String,
   },
   implementationName: {
