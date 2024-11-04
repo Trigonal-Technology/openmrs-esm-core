@@ -78,18 +78,18 @@ export const configSchema = {
             _type: Type.String,
             _required: true,
             _description: 'The source URL of the logo image',
-            _validations: [validators.isUrl]
+            _validations: [validators.isUrl],
           },
           alt: {
             _type: Type.String,
             _required: true,
-            _description: 'The alternative text for the logo image'
-          }
-        }
+            _description: 'The alternative text for the logo image',
+          },
+        },
       },
       _default: [],
-      _description: 'An array of logos to be displayed in the footer next to the OpenMRS logo.',
-    }
+      _description: 'An array of logos to be displayed in the footer next to the Alpine Cure logo.',
+    },
   },
   showPasswordOnSeparateScreen: {
     _type: Type.Boolean,

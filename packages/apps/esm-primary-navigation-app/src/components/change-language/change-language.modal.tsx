@@ -44,10 +44,21 @@ export default function ChangeLanguageModal({ close }: ChangeLanguageModalProps)
     }
   }, [isOnline, user.userProperties, user.uuid, selectedLocale]);
 
+  // const languageNames = useMemo(
+  //   () =>
+  //     Object.fromEntries(
+  //       allowedLocales.map((locale) => [locale, new Intl.DisplayNames([locale], { type: 'language' }).of(locale)]),
+  //     ),
+  //   [allowedLocales],
+  // );
+
+  //Filter only English and Arabic
   const languageNames = useMemo(
     () =>
       Object.fromEntries(
-        allowedLocales.map((locale) => [locale, new Intl.DisplayNames([locale], { type: 'language' }).of(locale)]),
+        allowedLocales
+          .filter((locale) => locale === 'en' || locale === 'ar') // Filter for only English and Arabic
+          .map((locale) => [locale, new Intl.DisplayNames([locale], { type: 'language' }).of(locale)]),
       ),
     [allowedLocales],
   );
@@ -63,7 +74,7 @@ export default function ChangeLanguageModal({ close }: ChangeLanguageModalProps)
             name="Language options"
             onChange={(locale) => setSelectedLocale(locale.toString())}
           >
-            {allowedLocales.map((locale, i) => (
+            {/* {allowedLocales.map((locale, i) => (
               <RadioButton
                 className={styles.languageRadioButton}
                 key={`locale-option-${locale}-${i}`}
@@ -72,7 +83,19 @@ export default function ChangeLanguageModal({ close }: ChangeLanguageModalProps)
                 labelText={languageNames[locale]}
                 value={locale}
               />
-            ))}
+            ))} */}
+            {allowedLocales
+              .filter((locale) => locale === 'en' || locale === 'ar') // Filter here for English and Arabic only
+              .map((locale, i) => (
+                <RadioButton
+                  className={styles.languageRadioButton}
+                  key={`locale-option-${locale}-${i}`}
+                  id={`locale-option-${locale}-${i}`}
+                  name={locale}
+                  labelText={languageNames[locale]}
+                  value={locale}
+                />
+              ))}
           </RadioButtonGroup>
         </div>
       </ModalBody>

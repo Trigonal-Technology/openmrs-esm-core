@@ -13,7 +13,7 @@ jest.mock('@openmrs/esm-framework', () => ({
 describe('<Logo/>', () => {
   afterEach(cleanup);
 
-  it('should display OpenMRS logo', () => {
+  it('should display Alpine Cure logo', () => {
     const mockConfig = { logo: { src: null, alt: null, name: null } };
     mockUseConfig.mockReturnValue(mockConfig);
     render(<Logo />);

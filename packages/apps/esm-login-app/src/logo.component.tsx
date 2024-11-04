@@ -8,15 +8,15 @@ const Logo: React.FC<{ t: TFunction }> = ({ t }) => {
   const { logo } = useConfig<ConfigSchema>();
   return logo.src ? (
     <img
-      alt={logo.alt ? t(logo.alt) : t('openmrsLogo', 'OpenMRS logo')}
+      alt={logo.alt ? t(logo.alt) : t('openmrsLogo', 'Alpine Cure logo')}
       className={styles.logoImg}
       src={interpolateUrl(logo.src)}
     />
   ) : (
     <svg role="img" className={styles.logo}>
-      <title>{t('openmrsLogo', 'OpenMRS logo')}</title>
+      <title>{t('openmrsLogo', 'Alpine Cure logo')}</title>
       <use href="#omrs-logo-full-color"></use>
-    </svg> 
+    </svg>
   );
 };
 
